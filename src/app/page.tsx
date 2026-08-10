@@ -1,5 +1,5 @@
-import { OverviewTemplate } from "@/app/_components/dashboard-templates";
+import { HomePage } from "@/modules/baby-spa/components";
 
-export default function HomePage() {
-  return <OverviewTemplate />;
+export default function Page() {
+  return <HomePage />;
 }

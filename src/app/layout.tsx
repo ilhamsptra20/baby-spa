@@ -43,8 +43,8 @@ const themeInitScript = `
 `;
 
 export const metadata: Metadata = {
-  title: "Next UI Boilerplate",
-  description: "Production-ready App Router UI template foundation.",
+  title: "Baby Spa Management System",
+  description: "Interactive prototype for customer booking, admin assignment, and therapist scheduling.",
 };
 
 export default function RootLayout({
