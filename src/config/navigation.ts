@@ -44,6 +44,10 @@ export const navigationIconMap: Record<NavigationIconKey, NavigationIcon> = {
   chart: ChartBarSquareIcon,
   users: UserCircleIcon,
   settings: Cog6ToothIcon,
+  calendar: CalendarDaysIcon,
+  list: ClipboardDocumentListIcon,
+  sparkles: SparklesIcon,
+  package: ShoppingBagIcon,
 };
 
 export const sidebarMenuGroups: SidebarMenuGroup[] = [
@@ -125,7 +129,6 @@ export function createSidebarMenuGroups(
         icon: navigationIconMap[item.icon],
       })),
     },
-    sidebarMenuGroups[1]!,
   ];
 }
 

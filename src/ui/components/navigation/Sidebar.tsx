@@ -25,6 +25,8 @@ interface SidebarProps {
   className?: string;
   navigation?: NavigationRoute[];
   brandLabel?: string;
+  brandSubtitle?: string;
+  brandShortLabel?: string;
   scrollbarVisibility?: "always" | "hover";
 }
 
@@ -32,6 +34,8 @@ export function Sidebar({
   className,
   navigation,
   brandLabel = appConfig.brand.label,
+  brandSubtitle = appConfig.brand.subtitle,
+  brandShortLabel = appConfig.brand.shortLabel,
   scrollbarVisibility = "hover",
 }: SidebarProps) {
   const pathname = usePathname();
@@ -54,11 +58,11 @@ export function Sidebar({
       <div className="flex h-[84px] items-center justify-between border-b border-slate-200/80 px-4 dark:border-slate-800">
         <div className="flex min-w-0 items-center gap-3 overflow-hidden">
           <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-sky-600 text-sm font-bold text-white shadow-sm shadow-sky-100">
-            {appConfig.brand.shortLabel}
+            {brandShortLabel}
           </span>
           <div className={cn("min-w-0", sidebarCollapsed && "hidden")}>
             <p className="truncate text-[15px] font-semibold tracking-tight text-slate-900 dark:text-slate-100">{brandLabel}</p>
-            <p className="truncate text-xs text-slate-500 dark:text-slate-400">{appConfig.brand.subtitle}</p>
+            <p className="truncate text-xs text-slate-500 dark:text-slate-400">{brandSubtitle}</p>
           </div>
         </div>
 

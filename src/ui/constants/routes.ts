@@ -10,11 +10,19 @@ export const ROUTES = {
 
 export type RouteValue = (typeof ROUTES)[keyof typeof ROUTES];
 
-export type NavigationIconKey = "home" | "chart" | "users" | "settings";
+export type NavigationIconKey =
+  | "home"
+  | "chart"
+  | "users"
+  | "settings"
+  | "calendar"
+  | "list"
+  | "sparkles"
+  | "package";
 
 export interface NavigationRoute {
   label: string;
-  href: RouteValue;
+  href: string;
   icon: NavigationIconKey;
 }
 

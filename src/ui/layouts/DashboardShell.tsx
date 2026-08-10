@@ -4,6 +4,7 @@ import { type ReactNode } from "react";
 
 import { CommandPalette, Header, MobileSidebar, Sidebar } from "@/ui/components/navigation";
 import { useAppStore } from "@/ui/stores/app.store";
+import type { NavigationRoute } from "@/ui/constants/routes";
 import { cn } from "@/ui/utils/cn";
 
 interface DashboardShellProps {
@@ -11,6 +12,10 @@ interface DashboardShellProps {
   title: string;
   subtitle?: string;
   headerActions?: ReactNode;
+  navigation?: NavigationRoute[];
+  brandLabel?: string;
+  brandSubtitle?: string;
+  brandShortLabel?: string;
 }
 
 export function DashboardShell({
@@ -18,13 +23,17 @@ export function DashboardShell({
   title,
   subtitle,
   headerActions,
+  navigation,
+  brandLabel,
+  brandSubtitle,
+  brandShortLabel,
 }: DashboardShellProps) {
   const sidebarCollapsed = useAppStore((state) => state.sidebarCollapsed);
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
-      <Sidebar />
-      <MobileSidebar />
+      <Sidebar navigation={navigation} brandLabel={brandLabel} brandSubtitle={brandSubtitle} brandShortLabel={brandShortLabel} />
+      <MobileSidebar navigation={navigation} brandLabel={brandLabel} brandSubtitle={brandSubtitle} brandShortLabel={brandShortLabel} />
       <CommandPalette />
 
       <div
