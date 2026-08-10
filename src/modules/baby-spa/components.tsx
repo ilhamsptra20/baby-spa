@@ -88,40 +88,40 @@ function StatusBadge({ status }: { status: BookingStatus }) {
 
 function PublicShell({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen bg-[#fbfaf7] text-slate-900 dark:bg-slate-950 dark:text-slate-100">
-      <header className="sticky top-0 z-30 border-b border-stone-200/80 bg-[#fffdf8]/90 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/90">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3.5 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-[#f7f1e8] text-[#2e2a25] dark:bg-slate-950 dark:text-slate-100">
+      <header className="sticky top-0 z-30 border-b border-[#e5d8c8] bg-[#fbf7f0]/95 backdrop-blur dark:border-slate-800 dark:bg-slate-950/90">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
           <Link href="/" className="flex min-w-0 items-center gap-3">
-            <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-[#47635a] text-sm font-bold text-white shadow-sm">BS</span>
+            <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#7a8d6b] text-sm font-bold text-white shadow-sm">BS</span>
             <span className="min-w-0">
               <span className="block truncate text-sm font-semibold tracking-tight">Baby Spa</span>
-              <span className="block truncate text-xs text-stone-500 dark:text-slate-400">Spa bayi & relaksasi</span>
+              <span className="block truncate text-xs text-[#8b7b69] dark:text-slate-400">Massage, swim, grooming</span>
             </span>
           </Link>
           <nav className="hidden items-center gap-1 lg:flex">
             {publicNav.map((item) => (
-              <Link key={item.href} href={item.href} className="rounded-md px-3 py-2 text-sm font-medium text-stone-600 transition hover:bg-stone-100 hover:text-stone-950 dark:text-slate-300 dark:hover:bg-slate-900">
+              <Link key={item.href} href={item.href} className="rounded-full px-3 py-2 text-sm font-medium text-[#6d6256] transition hover:bg-[#efe4d7] hover:text-[#2e2a25] dark:text-slate-300 dark:hover:bg-slate-900">
                 {item.label}
               </Link>
             ))}
           </nav>
-          <Link href="/booking" className="inline-flex h-10 items-center justify-center rounded-md bg-[#47635a] px-4 text-sm font-semibold text-white shadow-sm transition hover:bg-[#395149]">
+          <Link href="/booking" className="inline-flex h-10 items-center justify-center rounded-full bg-[#2f4f46] px-5 text-sm font-semibold text-white shadow-sm transition hover:bg-[#273f39]">
             Reservasi
           </Link>
         </div>
         <div className="flex gap-2 overflow-x-auto px-4 pb-3 lg:hidden">
           {publicNav.map((item) => (
-            <Link key={item.href} href={item.href} className="shrink-0 rounded-full bg-slate-100 px-3 py-1.5 text-xs font-medium text-slate-700 dark:bg-slate-900 dark:text-slate-200">
+            <Link key={item.href} href={item.href} className="shrink-0 rounded-full bg-[#efe4d7] px-3 py-1.5 text-xs font-medium text-[#5c5146] dark:bg-slate-900 dark:text-slate-200">
               {item.label}
             </Link>
           ))}
         </div>
       </header>
       <main>{children}</main>
-      <footer className="border-t border-stone-200 bg-[#fffdf8] dark:border-slate-800 dark:bg-slate-950">
-        <div className="mx-auto grid max-w-7xl gap-6 px-4 py-10 text-sm text-stone-500 sm:px-6 md:grid-cols-[1.2fr_0.8fr_0.8fr] lg:px-8">
+      <footer className="border-t border-[#e5d8c8] bg-[#f1e7da] dark:border-slate-800 dark:bg-slate-950">
+        <div className="mx-auto grid max-w-7xl gap-6 px-4 py-10 text-sm text-[#6f6256] sm:px-6 md:grid-cols-[1.2fr_0.8fr_0.8fr] lg:px-8">
           <div>
-            <p className="font-semibold text-stone-900 dark:text-slate-100">Baby Spa</p>
+            <p className="font-semibold text-[#2e2a25] dark:text-slate-100">Baby Spa</p>
             <p className="mt-2 leading-6">Tempat perawatan bayi dengan suasana tenang, bersih, dan nyaman untuk keluarga.</p>
           </div>
           <p className="leading-6">Pilih perawatan, isi data reservasi, lalu tim kami akan menghubungi untuk konfirmasi jadwal.</p>
@@ -186,18 +186,22 @@ function ServiceImage({ src, alt }: { src: string; alt: string }) {
 function PublicSectionTitle({ eyebrow, title, description }: { eyebrow?: string; title: string; description: string }) {
   return (
     <div className="max-w-2xl">
-      {eyebrow ? <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#6f8178]">{eyebrow}</p> : null}
-      <h2 className="mt-2 text-2xl font-semibold tracking-tight text-stone-950 dark:text-white sm:text-3xl">{title}</h2>
-      <p className="mt-3 text-sm leading-6 text-stone-600 dark:text-slate-300">{description}</p>
+      {eyebrow ? <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#7a8d6b]">{eyebrow}</p> : null}
+      <h2 className="mt-2 text-2xl font-semibold tracking-tight text-[#2e2a25] dark:text-white sm:text-3xl">{title}</h2>
+      <p className="mt-3 text-sm leading-6 text-[#76695c] dark:text-slate-300">{description}</p>
     </div>
   );
 }
 
 function PublicPageHeader({ title, description }: { title: string; description: string }) {
   return (
-    <section className="border-b border-stone-200 bg-[#f3f0e9] dark:border-slate-800 dark:bg-slate-900">
-      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+    <section className="border-b border-[#e5d8c8] bg-[#eadfce] dark:border-slate-800 dark:bg-slate-900">
+      <div className="mx-auto grid max-w-7xl gap-6 px-4 py-10 sm:px-6 md:grid-cols-[1fr_280px] lg:px-8">
         <PublicSectionTitle eyebrow="Baby Spa" title={title} description={description} />
+        <div className="rounded-2xl bg-[#fbf7f0] p-4 text-sm text-[#6f6256]">
+          <p className="font-semibold text-[#2e2a25]">Butuh jadwal cepat?</p>
+          <p className="mt-2 leading-6">Isi reservasi online, tim kami akan bantu cek slot yang paling nyaman.</p>
+        </div>
       </div>
     </section>
   );
@@ -213,41 +217,57 @@ function NotFoundPanel({ title = "Data tidak ditemukan" }: { title?: string }) {
   );
 }
 
-function ServiceCard({ service, type }: { service: Treatment | TreatmentPackage; type: BookingType }) {
+function ServiceCard({
+  service,
+  type,
+  compact = false,
+}: {
+  service: Treatment | TreatmentPackage;
+  type: BookingType;
+  compact?: boolean;
+}) {
   const duration = type === "PACKAGE" ? getPackageDuration(service as TreatmentPackage) : (service as Treatment).durationMinutes;
   const detailHref = type === "PACKAGE" ? `/packages/${service.slug}` : `/treatments/${service.slug}`;
 
   return (
-    <Card className="group h-full overflow-hidden rounded-lg border-stone-200 bg-[#fffdf8] shadow-sm hover:shadow-md dark:border-slate-800 dark:bg-slate-900" contentClassName="space-y-4">
-      <div className="overflow-hidden rounded-lg">
+    <article className={cn("group relative", compact && "w-[300px] shrink-0 snap-start")}>
+      <div className="overflow-hidden rounded-[1.6rem] bg-[#eadfce]">
         <ServiceImage src={service.image} alt={service.name} />
       </div>
-      <div className="space-y-2">
-        <div className="flex items-start justify-between gap-3">
-          <h3 className="text-base font-semibold text-stone-950 dark:text-slate-100">{service.name}</h3>
-          <span className="shrink-0 rounded-full bg-[#edf4ef] px-2.5 py-1 text-xs font-semibold text-[#47635a] dark:bg-emerald-500/15 dark:text-emerald-300">{duration} menit</span>
+      <div className="-mt-8 ml-4 mr-2 space-y-4 rounded-[1.2rem] bg-[#fbf7f0] p-4 shadow-[0_18px_45px_rgba(80,62,42,0.08)] ring-1 ring-[#eadfce] transition duration-200 group-hover:-translate-y-1 dark:bg-slate-900 dark:ring-slate-800">
+        <div className="flex items-start justify-between gap-4">
+          <div className="min-w-0">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#7a8d6b]">
+              {type === "PACKAGE" ? "Paket spa" : "Perawatan"}
+            </p>
+            <h3 className="mt-1 text-lg font-semibold leading-snug text-[#2e2a25] dark:text-slate-100">{service.name}</h3>
+          </div>
+          <span className="shrink-0 rounded-full bg-[#e7efdf] px-3 py-1 text-xs font-semibold text-[#4d684f] dark:bg-emerald-500/15 dark:text-emerald-300">{duration}m</span>
         </div>
-        <p className="text-sm leading-6 text-stone-600 dark:text-slate-300">{service.description}</p>
-      </div>
-      {"items" in service ? (
-        <ol className="space-y-1.5 text-sm text-stone-500 dark:text-slate-400">
-          {getPackageTreatments(service).map((entry) => (
-            <li key={entry.packageItem.id}>{entry.packageItem.sequence}. {entry.treatment.name}</li>
-          ))}
-        </ol>
-      ) : null}
-      <div className="flex flex-col gap-3 border-t border-stone-100 pt-4 sm:flex-row sm:items-center sm:justify-between dark:border-slate-800">
-        <p className="text-lg font-semibold text-stone-950 dark:text-white">{formatCurrency(service.price)}</p>
-        <div className="flex gap-2">
-          <Link href={detailHref} className="inline-flex h-10 items-center justify-center rounded-md border border-stone-300 px-3 text-sm font-medium text-stone-700 transition hover:bg-stone-100 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800">
+        <p className="text-sm leading-6 text-[#75695e] dark:text-slate-300">{service.description}</p>
+        {"items" in service ? (
+          <ol className="space-y-2 border-l border-[#d9c9b7] pl-3 text-sm text-[#817366] dark:border-slate-700 dark:text-slate-400">
+            {getPackageTreatments(service).map((entry) => (
+              <li key={entry.packageItem.id} className="leading-5">
+                <span className="font-medium text-[#5f554b] dark:text-slate-200">{entry.packageItem.sequence}. </span>
+                {entry.treatment.name}
+              </li>
+            ))}
+          </ol>
+        ) : null}
+        <div className="flex flex-col gap-3 pt-1 min-[360px]:flex-row min-[360px]:items-center min-[360px]:justify-between">
+          <p className="text-lg font-semibold text-[#2e2a25] dark:text-white">{formatCurrency(service.price)}</p>
+          <div className="flex shrink-0 gap-2">
+            <Link href={detailHref} className="inline-flex h-9 items-center justify-center rounded-full px-3 text-sm font-medium text-[#5f554b] transition hover:bg-[#efe4d7] dark:text-slate-200 dark:hover:bg-slate-800">
             Detail
-          </Link>
-          <Link href={`/booking?type=${type}&service=${service.id}`} className="inline-flex h-10 items-center justify-center rounded-md bg-[#47635a] px-3 text-sm font-semibold text-white transition hover:bg-[#395149]">
-            Pesan
-          </Link>
+            </Link>
+            <Link href={`/booking?type=${type}&service=${service.id}`} className="inline-flex h-9 items-center justify-center rounded-full bg-[#2f4f46] px-4 text-sm font-semibold text-white transition hover:bg-[#273f39]">
+              Pesan
+            </Link>
+          </div>
         </div>
       </div>
-    </Card>
+    </article>
   );
 }
 
@@ -317,33 +337,68 @@ function bookingDateSortValue(booking: Booking) {
 export function HomePage() {
   return (
     <PublicShell>
-      <section className="relative min-h-[560px] overflow-hidden bg-stone-900 sm:min-h-[600px]">
-        <div className="absolute inset-0">
+      <section className="mx-auto grid max-w-7xl gap-10 px-4 py-10 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8 lg:py-16">
+        <div className="flex flex-col justify-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#7a8d6b]">Baby spa & massage</p>
+          <h1 className="mt-4 max-w-xl text-4xl font-semibold tracking-tight text-[#2e2a25] sm:text-6xl">
+            Perawatan bayi yang tenang, hangat, dan personal.
+          </h1>
+          <p className="mt-5 max-w-lg text-base leading-7 text-[#6f6256]">
+            Reservasi baby massage, swim, gym, grooming, dan paket spa dengan jadwal yang dikonfirmasi oleh tim kami.
+          </p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Link href="/booking" className="inline-flex h-11 items-center justify-center rounded-full bg-[#2f4f46] px-5 text-sm font-semibold text-white shadow-sm transition hover:bg-[#273f39]">
+              Reservasi Sekarang <ArrowRightIcon className="h-4 w-4" />
+            </Link>
+            <Link href="/packages" className="inline-flex h-11 items-center justify-center rounded-full border border-[#cdb9a4] px-5 text-sm font-semibold text-[#4f463d] transition hover:bg-[#efe4d7]">
+              Lihat Paket
+            </Link>
+          </div>
+          <div className="mt-10 grid max-w-xl gap-3 sm:grid-cols-3">
+            {[
+              ["09.00 - 17.00", "Jam buka"],
+              ["3 langkah", "Reservasi singkat"],
+              ["WhatsApp", "Konfirmasi jadwal"],
+            ].map(([value, label]) => (
+              <div key={label} className="border-l border-[#cdb9a4] pl-4">
+                <p className="text-sm font-semibold text-[#2e2a25]">{value}</p>
+                <p className="mt-1 text-xs text-[#7b6e62]">{label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="grid min-h-[520px] grid-cols-6 grid-rows-6 gap-3">
           <div
             role="img"
-            aria-label="Gentle baby spa care"
-            className="h-full w-full bg-cover bg-center"
+            aria-label="Baby spa care"
+            className="col-span-6 row-span-4 rounded-[1.4rem] bg-cover bg-center shadow-sm sm:col-span-4 sm:row-span-6"
             style={{ backgroundImage: "url(https://images.unsplash.com/photo-1543342384-1f1350e27861?auto=format&fit=crop&w=1400&q=80)" }}
           />
-          <div className="absolute inset-0 bg-stone-950/55" />
-        </div>
-        <div className="relative mx-auto flex min-h-[560px] max-w-7xl items-center px-4 py-16 sm:min-h-[600px] sm:px-6 lg:px-8">
-          <div className="max-w-2xl text-white">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#e8d9c8]">Baby spa & massage</p>
-            <h1 className="mt-4 text-4xl font-semibold tracking-tight sm:text-6xl">Perawatan lembut untuk bayi, dibuat nyaman untuk orang tua.</h1>
-            <p className="mt-5 max-w-xl text-base leading-7 text-stone-100">
-              Pilih perawatan atau paket, tentukan jadwal, lalu tim kami akan membantu konfirmasi reservasi Anda.
-            </p>
-            <p className="mt-4 text-sm text-stone-200">Baby massage, baby swim, baby gym, dan grooming dalam suasana yang bersih dan tenang.</p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link href="/booking" className="inline-flex h-11 items-center justify-center rounded-md bg-[#f4efe6] px-5 text-sm font-semibold text-stone-950 shadow-sm transition hover:bg-white">
-                Reservasi Sekarang <ArrowRightIcon className="h-4 w-4" />
-              </Link>
-              <Link href="/packages" className="inline-flex h-11 items-center justify-center rounded-md border border-white/50 px-5 text-sm font-semibold text-white transition hover:bg-white/10">
-                Lihat Paket
-              </Link>
-            </div>
+          <div
+            role="img"
+            aria-label="Baby care detail"
+            className="col-span-3 row-span-2 rounded-[1.4rem] bg-cover bg-center shadow-sm sm:col-span-2 sm:row-span-3"
+            style={{ backgroundImage: "url(https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=900&q=80)" }}
+          />
+          <div className="col-span-3 row-span-2 rounded-[1.4rem] bg-[#e6d6c4] p-5 shadow-sm sm:col-span-2 sm:row-span-3">
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#7a8d6b]">Hari ini</p>
+            <p className="mt-3 text-2xl font-semibold text-[#2e2a25]">4 slot</p>
+            <p className="mt-2 text-sm leading-6 text-[#6f6256]">Tersedia untuk massage dan swim.</p>
           </div>
+        </div>
+      </section>
+      <section className="border-y border-[#e5d8c8] bg-[#fbf7f0]">
+        <div className="mx-auto grid max-w-7xl gap-6 px-4 py-8 sm:px-6 md:grid-cols-3 lg:px-8">
+          {[
+            ["Ruang hangat", "Area treatment dibuat tenang dan tidak terlalu ramai."],
+            ["Catatan anak", "Orang tua bisa menulis kebiasaan atau sensitivitas anak."],
+            ["Konfirmasi jelas", "Jadwal dikunci setelah tim kami menghubungi Anda."],
+          ].map(([title, description]) => (
+            <div key={title}>
+              <p className="text-sm font-semibold text-[#2e2a25]">{title}</p>
+              <p className="mt-2 text-sm leading-6 text-[#75695e]">{description}</p>
+            </div>
+          ))}
         </div>
       </section>
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
@@ -355,18 +410,18 @@ export function HomePage() {
           {packages.map((item) => <ServiceCard key={item.id} service={item} type="PACKAGE" />)}
         </div>
       </section>
-      <section className="bg-[#f3f0e9]">
+      <section className="bg-[#eadfce]">
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <PublicSectionTitle eyebrow="Perawatan" title="Perawatan harian yang lembut" description="Pilih perawatan sesuai kebutuhan bayi, dari pijat relaksasi sampai sesi berenang singkat." />
             <Link href="/treatments" className="text-sm font-semibold text-[#47635a] hover:text-[#395149]">Lihat semua perawatan</Link>
           </div>
-          <div className="mt-7 grid gap-5 md:grid-cols-3 xl:grid-cols-5">
-          {treatments.map((item) => <ServiceCard key={item.id} service={item} type="TREATMENT" />)}
+          <div className="mt-7 flex snap-x gap-5 overflow-x-auto pb-8">
+            {treatments.map((item) => <ServiceCard key={item.id} service={item} type="TREATMENT" compact />)}
           </div>
         </div>
       </section>
-      <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+      <section className="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
         <PublicSectionTitle eyebrow="Kenapa kami" title="Dibuat tenang untuk bayi dan praktis untuk orang tua" description="Kami menjaga proses reservasi tetap sederhana, dengan konfirmasi jadwal yang jelas sebelum kunjungan." />
         <div className="grid gap-4 md:grid-cols-3">
           {[
@@ -374,7 +429,10 @@ export function HomePage() {
             ["Jadwal dikonfirmasi", "Tim kami mengecek ketersediaan jadwal sebelum reservasi dipastikan."],
             ["Terapis disiapkan", "Terapis akan ditentukan oleh tim sesuai jadwal dan kebutuhan layanan."],
           ].map(([title, description]) => (
-            <Card key={title} className="mt-6 rounded-lg border-stone-200 bg-[#fffdf8]"><p className="text-base font-semibold">{title}</p><p className="mt-2 text-sm text-stone-500 dark:text-slate-400">{description}</p></Card>
+            <div key={title} className="rounded-2xl bg-[#fbf7f0] p-5">
+              <p className="text-base font-semibold text-[#2e2a25]">{title}</p>
+              <p className="mt-2 text-sm leading-6 text-[#75695e]">{description}</p>
+            </div>
           ))}
         </div>
       </section>
@@ -402,17 +460,17 @@ export function TreatmentDetailPage({ slug }: { slug: string }) {
   return (
     <PublicShell>
       <section className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
-        <div className="overflow-hidden rounded-lg border border-stone-200 bg-white p-2 shadow-sm">
+        <div className="overflow-hidden rounded-[1.5rem] border border-[#e4d6c7] bg-[#fbf7f0] p-2 shadow-sm">
           <ServiceImage src={treatment.image} alt={treatment.name} />
         </div>
         <div className="space-y-5">
           <PublicSectionTitle eyebrow="Perawatan" title={treatment.name} description={treatment.description} />
           <div className="grid gap-3 sm:grid-cols-3">
-            <Card className="rounded-lg border-stone-200"><p className="text-sm text-stone-500">Durasi</p><p className="mt-1 text-lg font-semibold">{treatment.durationMinutes} menit</p></Card>
-            <Card className="rounded-lg border-stone-200"><p className="text-sm text-stone-500">Harga</p><p className="mt-1 text-lg font-semibold">{formatCurrency(treatment.price)}</p></Card>
-            <Card className="rounded-lg border-stone-200"><p className="text-sm text-stone-500">Status</p><p className="mt-1 text-lg font-semibold">Aktif</p></Card>
+            <div className="rounded-2xl bg-[#fbf7f0] p-4"><p className="text-sm text-[#75695e]">Durasi</p><p className="mt-1 text-lg font-semibold">{treatment.durationMinutes} menit</p></div>
+            <div className="rounded-2xl bg-[#fbf7f0] p-4"><p className="text-sm text-[#75695e]">Harga</p><p className="mt-1 text-lg font-semibold">{formatCurrency(treatment.price)}</p></div>
+            <div className="rounded-2xl bg-[#fbf7f0] p-4"><p className="text-sm text-[#75695e]">Status</p><p className="mt-1 text-lg font-semibold">Tersedia</p></div>
           </div>
-          <Link href={`/booking?type=TREATMENT&service=${treatment.id}`} className="inline-flex h-11 items-center justify-center rounded-md bg-[#47635a] px-5 text-sm font-semibold text-white transition hover:bg-[#395149]">
+          <Link href={`/booking?type=TREATMENT&service=${treatment.id}`} className="inline-flex h-11 items-center justify-center rounded-full bg-[#2f4f46] px-5 text-sm font-semibold text-white transition hover:bg-[#273f39]">
             Pesan Perawatan
           </Link>
         </div>
@@ -441,27 +499,27 @@ export function PackageDetailPage({ slug }: { slug: string }) {
   return (
     <PublicShell>
       <section className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
-        <div className="overflow-hidden rounded-lg border border-stone-200 bg-white p-2 shadow-sm">
+        <div className="overflow-hidden rounded-[1.5rem] border border-[#e4d6c7] bg-[#fbf7f0] p-2 shadow-sm">
           <ServiceImage src={item.image} alt={item.name} />
         </div>
         <div className="space-y-5">
           <PublicSectionTitle eyebrow="Paket" title={item.name} description={item.description} />
-          <Card title="Urutan Perawatan" className="rounded-lg border-stone-200">
+          <Card title="Urutan Perawatan" className="rounded-2xl border-[#e4d6c7] bg-[#fbf7f0]">
             <ol className="space-y-3">
               {getPackageTreatments(item).map((entry) => (
-                <li key={entry.packageItem.id} className="flex items-center justify-between gap-3 rounded-lg bg-stone-50 px-3 py-2 dark:bg-slate-800">
+                <li key={entry.packageItem.id} className="flex items-center justify-between gap-3 rounded-full bg-[#f2eadf] px-4 py-2 dark:bg-slate-800">
                   <span className="text-sm font-medium">{entry.packageItem.sequence}. {entry.treatment.name}</span>
-                  <span className="text-sm text-stone-500">{entry.treatment.durationMinutes} menit</span>
+                  <span className="text-sm text-[#75695e]">{entry.treatment.durationMinutes} menit</span>
                 </li>
               ))}
             </ol>
           </Card>
           <div className="grid gap-3 sm:grid-cols-3">
-            <Card className="rounded-lg border-stone-200"><p className="text-sm text-stone-500">Total Durasi</p><p className="mt-1 text-lg font-semibold">{getPackageDuration(item)} menit</p></Card>
-            <Card className="rounded-lg border-stone-200"><p className="text-sm text-stone-500">Nilai Normal</p><p className="mt-1 text-lg font-semibold">{formatCurrency(getPackageOriginalValue(item))}</p></Card>
-            <Card className="rounded-lg border-stone-200"><p className="text-sm text-stone-500">Harga Paket</p><p className="mt-1 text-lg font-semibold">{formatCurrency(item.price)}</p></Card>
+            <div className="rounded-2xl bg-[#fbf7f0] p-4"><p className="text-sm text-[#75695e]">Total Durasi</p><p className="mt-1 text-lg font-semibold">{getPackageDuration(item)} menit</p></div>
+            <div className="rounded-2xl bg-[#fbf7f0] p-4"><p className="text-sm text-[#75695e]">Nilai Normal</p><p className="mt-1 text-lg font-semibold">{formatCurrency(getPackageOriginalValue(item))}</p></div>
+            <div className="rounded-2xl bg-[#fbf7f0] p-4"><p className="text-sm text-[#75695e]">Harga Paket</p><p className="mt-1 text-lg font-semibold">{formatCurrency(item.price)}</p></div>
           </div>
-          <Link href={`/booking?type=PACKAGE&service=${item.id}`} className="inline-flex h-11 items-center justify-center rounded-md bg-[#47635a] px-5 text-sm font-semibold text-white transition hover:bg-[#395149]">
+          <Link href={`/booking?type=PACKAGE&service=${item.id}`} className="inline-flex h-11 items-center justify-center rounded-full bg-[#2f4f46] px-5 text-sm font-semibold text-white transition hover:bg-[#273f39]">
             Pesan Paket
           </Link>
         </div>
@@ -502,12 +560,63 @@ export function BookingPage() {
   const [error, setError] = useState("");
   const selectedService = draft.serviceType === "PACKAGE" ? getPackage(draft.serviceId) : getTreatment(draft.serviceId);
 
-  function goNext() {
+  function validateStep(targetStep: number) {
+    if (targetStep === 0 && !draft.serviceId) {
+      return "Pilih layanan terlebih dahulu.";
+    }
+
+    if (targetStep === 1 && (!draft.customerName.trim() || !draft.customerPhone.trim())) {
+      return "Isi nama orang tua / wali dan nomor WhatsApp.";
+    }
+
+    if (targetStep === 2 && (!draft.babyName.trim() || !draft.babyBirthDate)) {
+      return "Isi nama anak dan tanggal lahir.";
+    }
+
+    if (targetStep === 3 && (!draft.bookingDate || !draft.startTime)) {
+      return "Pilih tanggal dan jam kunjungan.";
+    }
+
+    return "";
+  }
+
+  function canOpenStep(targetStep: number) {
+    for (let index = 0; index < targetStep; index += 1) {
+      const validationMessage = validateStep(index);
+      if (validationMessage) {
+        return validationMessage;
+      }
+    }
+
+    return "";
+  }
+
+  function handleStepClick(targetStep: number) {
     setError("");
-    if (!draft.serviceId || !draft.customerName.trim() || !draft.customerPhone.trim() || !draft.babyName.trim() || !draft.babyBirthDate || !draft.bookingDate || !draft.startTime) {
-      setError("Lengkapi data reservasi sebelum lanjut.");
+
+    if (targetStep <= step) {
+      setStep(targetStep);
       return;
     }
+
+    const validationMessage = canOpenStep(targetStep);
+    if (validationMessage) {
+      setError(validationMessage);
+      return;
+    }
+
+    setStep(targetStep);
+  }
+
+  function goNext() {
+    setError("");
+
+    const validationMessage = validateStep(step);
+    if (validationMessage) {
+      setError(validationMessage);
+      return;
+    }
+
     setStep((current) => Math.min(current + 1, bookingSteps.length - 1));
   }
 
@@ -521,21 +630,21 @@ export function BookingPage() {
       <PublicPageHeader title="Reservasi Kunjungan" description="Isi data orang tua, anak, layanan, dan jadwal kunjungan. Tim kami akan menghubungi Anda untuk konfirmasi." />
       <section className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="grid gap-6 lg:grid-cols-[1fr_340px]">
-          <Card className="rounded-lg border-stone-200 bg-[#fffdf8]" contentClassName="p-4 sm:p-6">
+          <Card className="rounded-[1.5rem] border-[#e4d6c7] bg-[#fbf7f0] shadow-none" contentClassName="p-4 sm:p-6">
             <div className="mb-7 grid gap-2 sm:grid-cols-3 lg:grid-cols-6">
               {bookingSteps.map((label, index) => (
                 <button
                   key={label}
                   type="button"
-                  onClick={() => setStep(index)}
+                  onClick={() => handleStepClick(index)}
                   className={cn(
-                    "flex h-12 items-center justify-center gap-2 rounded-md border text-xs font-semibold transition",
+                    "flex h-12 items-center justify-center gap-2 rounded-full border text-xs font-semibold transition",
                     index === step
-                      ? "border-[#47635a] bg-[#47635a] text-white"
-                      : "border-stone-200 bg-white text-stone-600 hover:border-stone-300 hover:bg-stone-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300",
+                      ? "border-[#2f4f46] bg-[#2f4f46] text-white"
+                      : "border-[#e4d6c7] bg-[#f7f1e8] text-[#75695e] hover:border-[#d4c4b3] hover:bg-[#efe4d7] dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300",
                   )}
                 >
-                  <span className={cn("inline-flex h-5 w-5 items-center justify-center rounded-full text-[10px]", index === step ? "bg-white/20 text-white" : "bg-stone-100 text-stone-500 dark:bg-slate-800")}>{index + 1}</span>
+                  <span className={cn("inline-flex h-5 w-5 items-center justify-center rounded-full text-[10px]", index === step ? "bg-white/20 text-white" : "bg-[#eadfce] text-[#75695e] dark:bg-slate-800")}>{index + 1}</span>
                   {label}
                 </button>
               ))}
@@ -543,8 +652,8 @@ export function BookingPage() {
             {step === 0 ? (
               <div className="space-y-5">
                 <div>
-                  <h2 className="text-lg font-semibold text-stone-950 dark:text-white">Pilih layanan</h2>
-                  <p className="mt-1 text-sm text-stone-500 dark:text-slate-400">Pilih perawatan atau paket yang ingin dipesan.</p>
+                  <h2 className="text-lg font-semibold text-[#2e2a25] dark:text-white">Pilih layanan</h2>
+                  <p className="mt-1 text-sm text-[#75695e] dark:text-slate-400">Pilih perawatan atau paket yang ingin dipesan.</p>
                 </div>
                 <Select
                   label="Tipe Layanan"
@@ -568,8 +677,8 @@ export function BookingPage() {
             {step === 1 ? (
               <div className="space-y-5">
                 <div>
-                  <h2 className="text-lg font-semibold text-stone-950 dark:text-white">Data orang tua / wali</h2>
-                  <p className="mt-1 text-sm text-stone-500 dark:text-slate-400">Kontak ini dipakai untuk konfirmasi jadwal reservasi.</p>
+                  <h2 className="text-lg font-semibold text-[#2e2a25] dark:text-white">Data orang tua / wali</h2>
+                  <p className="mt-1 text-sm text-[#75695e] dark:text-slate-400">Kontak ini dipakai untuk konfirmasi jadwal reservasi.</p>
                 </div>
                 <div className="grid gap-4 sm:grid-cols-2">
                 <Input
@@ -598,8 +707,8 @@ export function BookingPage() {
             {step === 2 ? (
               <div className="space-y-5">
                 <div>
-                  <h2 className="text-lg font-semibold text-stone-950 dark:text-white">Data anak</h2>
-                  <p className="mt-1 text-sm text-stone-500 dark:text-slate-400">Isi data anak yang akan mengikuti perawatan.</p>
+                  <h2 className="text-lg font-semibold text-[#2e2a25] dark:text-white">Data anak</h2>
+                  <p className="mt-1 text-sm text-[#75695e] dark:text-slate-400">Isi data anak yang akan mengikuti perawatan.</p>
                 </div>
                 <div className="grid gap-4 sm:grid-cols-2">
                 <Input
@@ -627,8 +736,8 @@ export function BookingPage() {
             {step === 3 ? (
               <div className="space-y-5">
                 <div>
-                  <h2 className="text-lg font-semibold text-stone-950 dark:text-white">Tanggal dan waktu</h2>
-                  <p className="mt-1 text-sm text-stone-500 dark:text-slate-400">Pilih tanggal dan jam kunjungan yang Anda inginkan.</p>
+                  <h2 className="text-lg font-semibold text-[#2e2a25] dark:text-white">Tanggal dan waktu</h2>
+                  <p className="mt-1 text-sm text-[#75695e] dark:text-slate-400">Pilih tanggal dan jam kunjungan yang Anda inginkan.</p>
                 </div>
                 <div className="grid gap-4 sm:grid-cols-2">
                   <Input label="Tanggal" type="date" value={draft.bookingDate} onChange={(event) => setDraft((current) => ({ ...current, bookingDate: event.target.value }))} />
@@ -639,8 +748,8 @@ export function BookingPage() {
             {step === 4 ? (
               <div className="space-y-5">
                 <div>
-                  <h2 className="text-lg font-semibold text-stone-950 dark:text-white">Catatan tambahan</h2>
-                  <p className="mt-1 text-sm text-stone-500 dark:text-slate-400">Opsional, tapi membantu kami menyiapkan sesi dengan lebih baik.</p>
+                  <h2 className="text-lg font-semibold text-[#2e2a25] dark:text-white">Catatan tambahan</h2>
+                  <p className="mt-1 text-sm text-[#75695e] dark:text-slate-400">Opsional, tapi membantu kami menyiapkan sesi dengan lebih baik.</p>
                 </div>
                 <Textarea label="Catatan untuk staff" value={draft.customerNotes} placeholder="Contoh: Aisyah agak sensitif dengan air terlalu dingin." onChange={(event) => setDraft((current) => ({ ...current, customerNotes: event.target.value }))} />
               </div>
@@ -648,8 +757,8 @@ export function BookingPage() {
             {step === 5 ? (
               <div className="space-y-4">
                 <div>
-                  <h2 className="text-lg font-semibold text-stone-950 dark:text-white">Konfirmasi reservasi</h2>
-                  <p className="mt-1 text-sm text-stone-500 dark:text-slate-400">Pastikan data sudah benar sebelum reservasi dikirim.</p>
+                  <h2 className="text-lg font-semibold text-[#2e2a25] dark:text-white">Konfirmasi reservasi</h2>
+                  <p className="mt-1 text-sm text-[#75695e] dark:text-slate-400">Pastikan data sudah benar sebelum reservasi dikirim.</p>
                 </div>
                 <Alert tone="info" title="Periksa kembali data reservasi" description="Reservasi akan masuk sebagai Menunggu Konfirmasi. Tim kami akan menghubungi Anda untuk memastikan jadwal." />
                 <BookingReview draft={draft} />
@@ -661,20 +770,20 @@ export function BookingPage() {
               {step < bookingSteps.length - 1 ? <Button color="emerald" onClick={goNext}>Lanjut</Button> : <Button color="emerald" onClick={submitBooking}>Kirim Reservasi</Button>}
             </div>
           </Card>
-          <Card title="Ringkasan" className="rounded-lg border-stone-200 bg-white lg:sticky lg:top-24 lg:self-start">
+          <Card title="Ringkasan" className="rounded-[1.5rem] border-[#e4d6c7] bg-[#fbf7f0] shadow-none lg:sticky lg:top-24 lg:self-start">
             <div className="space-y-4 text-sm">
-              <div className="rounded-lg bg-[#f3f0e9] p-3">
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#6f8178]">Layanan</p>
-                <p className="mt-1 font-semibold text-stone-950">{selectedService?.name ?? "-"}</p>
-                <p className="mt-1 text-stone-600">{selectedService ? formatCurrency(selectedService.price) : "-"}</p>
+              <div className="rounded-2xl bg-[#eadfce] p-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#7a8d6b]">Layanan</p>
+                <p className="mt-1 font-semibold text-[#2e2a25]">{selectedService?.name ?? "-"}</p>
+                <p className="mt-1 text-[#75695e]">{selectedService ? formatCurrency(selectedService.price) : "-"}</p>
               </div>
               <dl className="space-y-3">
-                <div><dt className="text-stone-500">Orang tua / wali</dt><dd className="font-medium">{draft.customerName || "-"}</dd></div>
-                <div><dt className="text-stone-500">WhatsApp</dt><dd className="font-medium">{draft.customerPhone || "-"}</dd></div>
-                <div><dt className="text-stone-500">Anak</dt><dd className="font-medium">{draft.babyName || "-"}</dd></div>
-                <div><dt className="text-stone-500">Jadwal</dt><dd className="font-medium">{formatDate(draft.bookingDate)} - {formatTime(draft.startTime)}</dd></div>
+                <div><dt className="text-[#75695e]">Orang tua / wali</dt><dd className="font-medium">{draft.customerName || "-"}</dd></div>
+                <div><dt className="text-[#75695e]">WhatsApp</dt><dd className="font-medium">{draft.customerPhone || "-"}</dd></div>
+                <div><dt className="text-[#75695e]">Anak</dt><dd className="font-medium">{draft.babyName || "-"}</dd></div>
+                <div><dt className="text-[#75695e]">Jadwal</dt><dd className="font-medium">{formatDate(draft.bookingDate)} - {formatTime(draft.startTime)}</dd></div>
               </dl>
-              <p className="rounded-lg border border-stone-200 bg-stone-50 p-3 text-xs leading-5 text-stone-500">Terapis akan disiapkan oleh tim kami setelah jadwal dikonfirmasi.</p>
+              <p className="rounded-2xl border border-[#e4d6c7] bg-[#f7f1e8] p-3 text-xs leading-5 text-[#75695e]">Terapis akan disiapkan oleh tim kami setelah jadwal dikonfirmasi.</p>
             </div>
           </Card>
         </div>

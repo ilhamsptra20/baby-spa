@@ -39,12 +39,22 @@ export function formatCurrency(value: number) {
 }
 
 export function formatDate(value: string, options?: Intl.DateTimeFormatOptions) {
+  if (!value) {
+    return "-";
+  }
+
+  const date = new Date(`${value}T00:00:00`);
+
+  if (Number.isNaN(date.getTime())) {
+    return "-";
+  }
+
   return new Intl.DateTimeFormat("id-ID", {
     day: "numeric",
     month: "long",
     year: "numeric",
     ...options,
-  }).format(new Date(`${value}T00:00:00`));
+  }).format(date);
 }
 
 export function formatTime(value: string) {
